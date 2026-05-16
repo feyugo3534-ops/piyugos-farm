@@ -34,7 +34,7 @@
         .header {
             position: relative;
             height: 400px;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1200&h=600&fit=crop');
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1560493676-04071c5f467b?w=1200&h=600&fit=crop');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -91,6 +91,139 @@
             margin-bottom: 15px;
             color: var(--text-light);
             line-height: 1.8;
+        }
+
+        /* Admin Panel */
+        .admin-panel {
+            background: linear-gradient(135deg, #dbeafe 0%, #ecfdf5 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            border: 2px solid var(--primary);
+        }
+
+        .admin-panel h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .admin-section {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .admin-section h4 {
+            color: var(--text);
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .photo-input-group {
+            display: grid;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .photo-input-group input, .photo-input-group textarea {
+            padding: 10px;
+            border: 2px solid #e5e7eb;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.95em;
+        }
+
+        .photo-input-group textarea {
+            min-height: 60px;
+            resize: vertical;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            margin: 5px 5px 5px 0;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.95em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-danger {
+            background: #ef4444;
+            color: var(--white);
+            padding: 8px 12px;
+            font-size: 0.85em;
+        }
+
+        .btn-danger:hover {
+            background: #dc2626;
+        }
+
+        .btn-secondary {
+            background: #6b7280;
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: #4b5563;
+        }
+
+        /* Photo Gallery */
+        .current-photos {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .current-photos h4 {
+            color: var(--text);
+            margin-bottom: 15px;
+        }
+
+        .photo-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .photo-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background: #f9fafb;
+            border-radius: 6px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .photo-item-info {
+            flex: 1;
+        }
+
+        .photo-item-caption {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 3px;
+        }
+
+        .photo-item-url {
+            font-size: 0.85em;
+            color: var(--text-light);
+            word-break: break-all;
         }
 
         /* Timeline */
@@ -308,70 +441,19 @@
             margin-bottom: 10px;
         }
 
-        /* Edit Mode Styles */
-        .edit-controls {
-            background: var(--white);
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            text-align: center;
-            box-shadow: var(--shadow);
+        .help-box {
+            background: #fef08a;
+            border-left: 4px solid #eab308;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 0.95em;
         }
 
-        .btn {
-            padding: 12px 24px;
-            margin: 5px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .help-box strong {
+            color: #92400e;
         }
 
-        .btn-primary {
-            background: var(--primary);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .btn-secondary {
-            background: #6b7280;
-            color: var(--white);
-        }
-
-        .btn-secondary:hover {
-            background: #4b5563;
-        }
-
-        .btn-danger {
-            background: #ef4444;
-            color: var(--white);
-        }
-
-        .btn-danger:hover {
-            background: #dc2626;
-        }
-
-        .info-box {
-            background: #dbeafe;
-            border-left: 4px solid #3b82f6;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-        }
-
-        .info-box p {
-            color: #1e40af;
-            margin: 5px 0;
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2em;
@@ -381,12 +463,6 @@
                 font-size: 1.2em;
             }
 
-            .header-info {
-                flex-direction: column;
-                gap: 15px;
-                font-size: 0.95em;
-            }
-
             .phase {
                 padding-left: 80px;
             }
@@ -394,11 +470,15 @@
             .phase-dot {
                 width: 50px;
                 height: 50px;
-                font-size: 0.9em;
             }
 
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .photo-item {
+                flex-direction: column;
+                align-items: flex-start;
             }
         }
     </style>
@@ -424,15 +504,53 @@
             <p>A family living overseas who found their sanctuary in the Philippines. Piyugo's Farm is our escape from corporate chaos, a place to reconnect with nature and loved ones, and a legacy we're building for our children.</p>
         </div>
 
-        <!-- Info Box -->
-        <div class="info-box">
-            <p><strong>💡 Tip:</strong> Hover over photos to see descriptions. Click any phase to expand and read the full story!</p>
-        </div>
+        <!-- Admin Panel -->
+        <div class="admin-panel">
+            <h3>📸 Easy Photo Management</h3>
 
-        <!-- Edit Controls -->
-        <div class="edit-controls" id="editControls">
-            <button class="btn btn-primary" onclick="toggleEditMode()">✏️ Edit Content</button>
-            <p style="font-size: 0.9em; color: #6b7280; margin-top: 10px;">These are sample photos. You can replace them with your real farm photos!</p>
+            <div class="help-box">
+                <strong>💡 How to Use:</strong> Paste a photo URL below + add a caption + click "Add Photo". That's it! No code editing needed.
+            </div>
+
+            <!-- Add Photo Section -->
+            <div class="admin-section">
+                <h4>➕ Add a New Photo to Phase 5 (The Farmhouse)</h4>
+                <div class="photo-input-group">
+                    <input type="text" id="photoUrl" placeholder="Paste image URL here (https://...)">
+                    <input type="text" id="photoCaption" placeholder="Photo caption (what does this photo show?)">
+                    <select id="phaseSelect" style="padding: 10px; border: 2px solid #e5e7eb; border-radius: 6px; font-family: inherit;">
+                        <option value="phase1">Phase 1: The First Step (2016)</option>
+                        <option value="phase2">Phase 2: Expansion Phase I (2017)</option>
+                        <option value="phase3">Phase 3: Expansion Phase II (2017)</option>
+                        <option value="phase4">Phase 4: Development Years (2017-2020)</option>
+                        <option value="phase5" selected>Phase 5: The Farmhouse (2020-2021)</option>
+                        <option value="phase6">Phase 6: Final Expansion (2021-2024)</option>
+                        <option value="phase7">Phase 7: Our Haven Today (2024-Present)</option>
+                    </select>
+                    <button class="btn btn-primary" onclick="addPhoto()">✅ Add Photo</button>
+                </div>
+            </div>
+
+            <!-- Current Photos Section -->
+            <div class="current-photos">
+                <h4>📷 All Current Photos</h4>
+                <div id="photosList" class="photo-list">
+                    <p style="color: var(--text-light); text-align: center;">Photos will appear here...</p>
+                </div>
+            </div>
+
+            <!-- Instructions Section -->
+            <div class="admin-section">
+                <h4>📖 How to Get Photo URLs</h4>
+                <p style="margin-bottom: 10px; color: var(--text-light);">
+                    <strong>From Google Photos:</strong>
+                    1. Open photo → 2. Click three dots (⋮) → 3. "Copy image link" → 4. Paste above
+                </p>
+                <p style="color: var(--text-light);">
+                    <strong>From Unsplash:</strong>
+                    1. Find photo → 2. Right-click → 3. "Copy image link" → 4. Paste above
+                </p>
+            </div>
         </div>
 
         <!-- Timeline -->
@@ -454,175 +572,197 @@
     </div>
 
     <script>
-        // Farm data with 5 sample photos for each phase
+        // Farm data
         const farmData = {
-            phases: [
-                {
-                    id: 1,
-                    title: "The First Step",
-                    startDate: "2016",
-                    endDate: "2016",
-                    description: "The Beginning - Purchasing the First 600 Square Meters",
-                    story: "It all started in 2016 with a simple vision: a piece of land in the Philippines where our family could truly be ourselves, away from the corporate grind. We purchased our first 600 square meters of front property. This wasn't just a real estate transaction—it was the first step towards building something meaningful, a place where we could create memories with our loved ones.\n\nStanding on that initial piece of land, we could already envision the potential. It was raw, it was humble, but it was ours. This was the foundation of what would eventually become our family haven.",
-                    images: [
-                        { url: "https://images.unsplash.com/photo-1560010481-e36fbf80fe46?w=300&h=300&fit=crop", caption: "Initial front property survey" },
-                        { url: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe3e?w=300&h=300&fit=crop", caption: "Empty property landscape" },
-                        { url: "https://images.unsplash.com/photo-1500382017468-7049ffd0c72c?w=300&h=300&fit=crop", caption: "Land clearing begins" },
-                        { url: "https://images.unsplash.com/photo-1464207687429-7505649dae38?w=300&h=300&fit=crop", caption: "Foundation marking" },
-                        { url: "https://images.unsplash.com/photo-1469022563149-aa64dbd37dae?w=300&h=300&fit=crop", caption: "Preparing the property" }
-                    ]
-                },
-                {
-                    id: 2,
-                    title: "Expansion Phase I",
-                    startDate: "2017",
-                    endDate: "2017",
-                    description: "Growing Dreams - Adding 600 Square Meters Adjacent Property",
-                    story: "In 2017, our vision grew. We purchased another 600 square meters of property right beside our initial land. This doubled our space to 1,200 square meters and opened up new possibilities. We began planning layouts, imagining gardens, and dreaming about the spaces where our children would play and our family would gather.\n\nEach addition to the farm represented a deeper commitment to creating this sanctuary. Our family's excitement grew with each purchase.",
-                    images: [
-                        { url: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=300&h=300&fit=crop", caption: "Property expanded to 1,200 sq meters" },
-                        { url: "https://images.unsplash.com/photo-1625246333195-78d9c38ad576?w=300&h=300&fit=crop", caption: "Development planning" },
-                        { url: "https://images.unsplash.com/photo-1497366216548-495c1c9c5cb5?w=300&h=300&fit=crop", caption: "Boundary marking" },
-                        { url: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=300&h=300&fit=crop", caption: "Site measurement" },
-                        { url: "https://images.unsplash.com/photo-1486882735882-bc8665dbca6b?w=300&h=300&fit=crop", caption: "Property documentation" }
-                    ]
-                },
-                {
-                    id: 3,
-                    title: "Expansion Phase II - The Big Dream",
-                    startDate: "2017",
-                    endDate: "2017",
-                    description: "Vision Realized - Acquiring 2,000 Square Meters of Back Property",
-                    story: "Later in 2017, we made the biggest leap yet. We purchased 2,000 square meters of back property. Suddenly, our small plot had grown to over 3,200 square meters—0.32 hectares. This was no longer just a hobby property, it was becoming a real estate and lifestyle project.\n\nThe back property was raw potential. It gave us the space to truly imagine something bigger. We could build gardens, create walking paths, have space for recreation, and eventually, a proper home. The family was energized. Our children could now play freely on more land. My wife's eyes lit up when she saw the possibilities.\n\nThis was the moment we realized: we weren't just buying land in the Philippines—we were building a legacy.",
-                    images: [
-                        { url: "https://images.unsplash.com/photo-1560010481-e36fbf80fe46?w=300&h=300&fit=crop", caption: "Extended property view" },
-                        { url: "https://images.unsplash.com/photo-1464226184612-280ebc17f177?w=300&h=300&fit=crop", caption: "Vast landscape acquired" },
-                        { url: "https://images.unsplash.com/photo-1501853745169-eea8e00b8e13?w=300&h=300&fit=crop", caption: "Panoramic property view" },
-                        { url: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe3e?w=300&h=300&fit=crop", caption: "Open field potential" },
-                        { url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop", caption: "Property surveying" }
-                    ]
-                },
-                {
-                    id: 4,
-                    title: "Development Years",
-                    startDate: "2017",
-                    endDate: "2020",
-                    description: "Building Infrastructure and Preparing the Land",
-                    story: "Between 2017 and 2020, we were in development mode. This wasn't visible progress like construction—it was the behind-the-scenes work that makes a property functional and beautiful. We cleared land, built access roads, installed drainage systems, and prepared the soil for gardens.\n\nWe spent time on the property during our visits home, planning layouts, consulting with local contractors, and dreaming about what would come next. My wife was particularly engaged in planning the areas where the family could gather. The kids would explore the expanding property, their joy and freedom contrasting sharply with their urban overseas life.\n\nThis was the foundation-building phase. Every piece of infrastructure we added brought us closer to the home we knew we wanted to build.",
-                    images: [
-                        { url: "https://images.unsplash.com/photo-1625246333195-78d9c38ad576?w=300&h=300&fit=crop", caption: "Irrigation system installation" },
-                        { url: "https://images.unsplash.com/photo-1487730116645-74489c95b41b?w=300&h=300&fit=crop", caption: "Infrastructure construction" },
-                        { url: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=300&h=300&fit=crop", caption: "Road development" },
-                        { url: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=300&h=300&fit=crop", caption: "Land preparation work" },
-                        { url: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=300&h=300&fit=crop", caption: "Development progress" }
-                    ]
-                },
-                {
-                    id: 5,
-                    title: "The Pandemic Blessing - The Farmhouse",
-                    startDate: "2020",
-                    endDate: "2021",
-                    description: "A Dream Realized - Building Our Family Home During Uncertain Times",
-                    story: "2020-2021 was when everything changed. While the world struggled with the pandemic, we found an unexpected blessing. We finally built the farmhouse—the physical manifestation of our dream.\n\nIt's hard to describe the transformation this brought to our family. My wife was absolutely beaming. The kids' eyes light up every time we talk about going 'home' to the farm. This wasn't just a house; this was freedom. This was space. This was a sanctuary where we could be ourselves without the pressure of corporate deadlines and urban stress.\n\nBuilding during the pandemic meant we had time to get involved, to make choices, to oversee every detail. The farmhouse became more than shelter—it became a symbol of our commitment to staying grounded, to maintaining our values, and to creating a place where family matters above all else.\n\nThe pandemic made us realize what truly mattered. And Piyugo's Farm became that reminder in physical form.",
-                    images: [
-                        { url: "https://images.unsplash.com/photo-1560516737-b3c4da7d4fe0?w=300&h=300&fit=crop", caption: "Farmhouse construction begins" },
-                        { url: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=300&h=300&fit=crop", caption: "Structure taking shape" },
-                        { url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=300&h=300&fit=crop", caption: "Walls rising up" },
-                        { url: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300&h=300&fit=crop", caption: "Family home nearing completion" },
-                        { url: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=300&h=300&fit=crop", caption: "Dream home realized" }
-                    ]
-                },
-                {
-                    id: 6,
-                    title: "Final Expansion - Reaching 2.6 Hectares",
-                    startDate: "2021",
-                    endDate: "2024",
-                    description: "Completing the Vision - Land Acquisition Through 2024",
-                    story: "What started as a vision of 600 square meters has blossomed into 2.6 hectares of paradise. Through strategic acquisitions between 2021 and 2024, we completed our property puzzle. Every additional piece of land we purchased represented not just expansion, but the solidification of our legacy.\n\n2.6 hectares is substantial—it's no longer just a vacation property, it's an estate. It's a place where our children will grow up with memories of freedom, nature, and family. It's where they'll understand that success isn't just measured in corporate titles but in moments together.\n\nWith the farmhouse complete and the full property established, Piyugo's Farm has become what we always imagined: a true haven. A place where overseas life feels distant, where corporate chaos melts away, and where what matters most—family, nature, and peace—takes center stage.",
-                    images: [
-                        { url: "https://images.unsplash.com/photo-1560010481-e36fbf80fe46?w=300&h=300&fit=crop", caption: "Expanded estate view" },
-                        { url: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=300&h=300&fit=crop", caption: "Complete property landscape" },
-                        { url: "https://images.unsplash.com/photo-1625246333195-78d9c38ad576?w=300&h=300&fit=crop", caption: "Mature farm development" },
-                        { url: "https://images.unsplash.com/photo-1500382017468-7049ffd0c72c?w=300&h=300&fit=crop", caption: "Walking trails and pathways" },
-                        { url: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe3e?w=300&h=300&fit=crop", caption: "2.6 hectares realized" }
-                    ]
-                },
-                {
-                    id: 7,
-                    title: "Our Haven Today",
-                    startDate: "2024",
-                    endDate: "Present",
-                    description: "A Family Legacy - Our Sanctuary and Future Vision",
-                    story: "Today, Piyugo's Farm stands as a testament to a simple belief: that success and happiness aren't found in the corporate towers of overseas cities, but in moments with family, in the quiet of nature, and in a place you can truly call home.\n\nEvery vacation, we come here. The kids run freely through 2.6 hectares of their own property. My wife finds peace tending to the land and the farmhouse. I find clarity away from corporate chaos—a grounding force that reminds me what truly matters.\n\nThis farm has evolved from a business decision into something much deeper—a family philosophy. It's our answer to the question: 'What are we building all this success for?'\n\nThe answer is simple: to come home to places like this. To build memories in a place that's uniquely ours. To show our children that a different kind of wealth exists—not measured in bank accounts, but in family dinners under the stars, in running barefoot through gardens, in parents who prioritize presence over promotions.\n\nPiyugo's Farm is now our haven. Our vacation home. Our sanctuary. Our legacy in the making. And every time we set foot on this land, we're reminded of why we did this in the first place.",
-                    images: [
-                        { url: "https://images.unsplash.com/photo-1560493676-04071c5f467b?w=300&h=300&fit=crop", caption: "Farm sanctuary today" },
-                        { url: "https://images.unsplash.com/photo-1464226184612-280ebc17f177?w=300&h=300&fit=crop", caption: "Where family gathers" },
-                        { url: "https://images.unsplash.com/photo-1500382017468-7049ffd0c72c?w=300&h=300&fit=crop", caption: "Peaceful haven" },
-                        { url: "https://images.unsplash.com/photo-1469022563149-aa64dbd37dae?w=300&h=300&fit=crop", caption: "Beautiful property" },
-                        { url: "https://images.unsplash.com/photo-1445308394109-2848100e0a6e?w=300&h=300&fit=crop", caption: "Our family legacy" }
-                    ]
-                }
-            ]
+            phase1: {
+                title: "The First Step",
+                startDate: "2016",
+                endDate: "2016",
+                description: "The Beginning - Purchasing the First 600 Square Meters",
+                story: "It all started in 2016 with a simple vision: a piece of land in the Philippines where our family could truly be ourselves, away from the corporate grind. We purchased our first 600 square meters of front property.",
+                images: [
+                    { url: "https://images.unsplash.com/photo-1560010481-e36fbf80fe46?w=300&h=300&fit=crop", caption: "Initial front property - 600 square meters" },
+                    { url: "https://images.unsplash.com/photo-1625246333195-78d9c38ad576?w=300&h=300&fit=crop", caption: "The beginning of our dream" }
+                ]
+            },
+            phase2: {
+                title: "Expansion Phase I",
+                startDate: "2017",
+                endDate: "2017",
+                description: "Growing Dreams - Adding 600 Square Meters Adjacent Property",
+                story: "In 2017, our vision grew. We purchased another 600 square meters of property right beside our initial land. This doubled our space to 1,200 square meters and opened up new possibilities.",
+                images: [
+                    { url: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=300&h=300&fit=crop", caption: "Our property expanded to 1,200 square meters" }
+                ]
+            },
+            phase3: {
+                title: "Expansion Phase II - The Big Dream",
+                startDate: "2017",
+                endDate: "2017",
+                description: "Vision Realized - Acquiring 2,000 Square Meters of Back Property",
+                story: "Later in 2017, we made the biggest leap yet. We purchased 2,000 square meters of back property. Suddenly, our small plot had grown to over 3,200 square meters—0.32 hectares.",
+                images: [
+                    { url: "https://images.unsplash.com/photo-1560010481-e36fbf80fe46?w=300&h=300&fit=crop", caption: "Expanded property" }
+                ]
+            },
+            phase4: {
+                title: "Development Years",
+                startDate: "2017",
+                endDate: "2020",
+                description: "Building Infrastructure and Preparing the Land",
+                story: "Between 2017 and 2020, we were in development mode. We cleared land, built access roads, installed drainage systems, and prepared the soil for gardens.",
+                images: [
+                    { url: "https://images.unsplash.com/photo-1625246333195-78d9c38ad576?w=300&h=300&fit=crop", caption: "Infrastructure development" }
+                ]
+            },
+            phase5: {
+                title: "The Pandemic Blessing - The Farmhouse",
+                startDate: "2020",
+                endDate: "2021",
+                description: "A Dream Realized - Building Our Family Home During Uncertain Times",
+                story: "2020-2021 was when everything changed. While the world struggled with the pandemic, we found an unexpected blessing. We finally built the farmhouse—the physical manifestation of our dream. My wife was absolutely beaming. The kids' eyes light up every time we talk about going 'home' to the farm.",
+                images: [
+                    { url: "https://images.unsplash.com/photo-1560516737-b3c4da7d4fe0?w=300&h=300&fit=crop", caption: "The farmhouse under construction" },
+                    { url: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=300&h=300&fit=crop", caption: "Our dream home taking shape" }
+                ]
+            },
+            phase6: {
+                title: "Final Expansion - Reaching 2.6 Hectares",
+                startDate: "2021",
+                endDate: "2024",
+                description: "Completing the Vision - Land Acquisition Through 2024",
+                story: "What started as a vision of 600 square meters has blossomed into 2.6 hectares of paradise. Through strategic acquisitions between 2021 and 2024, we completed our property puzzle.",
+                images: [
+                    { url: "https://images.unsplash.com/photo-1560010481-e36fbf80fe46?w=300&h=300&fit=crop", caption: "Expanded estate view" }
+                ]
+            },
+            phase7: {
+                title: "Our Haven Today",
+                startDate: "2024",
+                endDate: "Present",
+                description: "A Family Legacy - Our Sanctuary and Future Vision",
+                story: "Today, Piyugo's Farm stands as a testament to a simple belief: that success and happiness aren't found in the corporate towers of overseas cities, but in moments with family, in the quiet of nature, and in a place you can truly call home.",
+                images: [
+                    { url: "https://images.unsplash.com/photo-1560493676-04071c5f467b?w=300&h=300&fit=crop", caption: "Farm sanctuary today" }
+                ]
+            }
         };
-
-        let isEditMode = false;
 
         // Render timeline
         function renderTimeline() {
             const timeline = document.getElementById('timeline');
-            timeline.innerHTML = farmData.phases.map(phase => `
-                <div class="phase" data-id="${phase.id}">
-                    <div class="phase-dot"></div>
-                    <div class="phase-card">
-                        <div class="phase-header" onclick="togglePhase(${phase.id})">
-                            <div class="phase-toggle">▼</div>
-                            <h3>${phase.title}</h3>
-                            <div class="phase-date">${phase.startDate}${phase.endDate && phase.endDate !== phase.startDate ? ` – ${phase.endDate}` : ''}</div>
-                            <div class="phase-description">${phase.description}</div>
-                        </div>
-                        <div class="phase-content">
-                            <div class="phase-story">
-                                <h4>Story</h4>
-                                <p>${phase.story}</p>
+            let html = '';
+
+            Object.keys(farmData).forEach(key => {
+                const phase = farmData[key];
+                html += `
+                    <div class="phase" data-id="${key}">
+                        <div class="phase-dot"></div>
+                        <div class="phase-card">
+                            <div class="phase-header" onclick="togglePhase('${key}')">
+                                <div class="phase-toggle">▼</div>
+                                <h3>${phase.title}</h3>
+                                <div class="phase-date">${phase.startDate}${phase.endDate && phase.endDate !== phase.startDate ? ` – ${phase.endDate}` : ''}</div>
+                                <div class="phase-description">${phase.description}</div>
                             </div>
-                            <div class="gallery">
-                                <h4>Photo Gallery</h4>
-                                <div class="gallery-grid">
-                                    ${phase.images.map((img, idx) => `
-                                        <div class="gallery-item" onclick="event.stopPropagation()">
-                                            <img src="${img.url}" alt="${img.caption}">
-                                            <div class="gallery-caption">${img.caption}</div>
-                                        </div>
-                                    `).join('')}
+                            <div class="phase-content">
+                                <div class="phase-story">
+                                    <h4>Story</h4>
+                                    <p>${phase.story}</p>
+                                </div>
+                                <div class="gallery">
+                                    <h4>Photo Gallery</h4>
+                                    <div class="gallery-grid">
+                                        ${phase.images.map(img => `
+                                            <div class="gallery-item">
+                                                <img src="${img.url}" alt="${img.caption}">
+                                                <div class="gallery-caption">${img.caption}</div>
+                                            </div>
+                                        `).join('')}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            `).join('');
+                `;
+            });
+
+            timeline.innerHTML = html;
         }
 
-        // Toggle phase expansion
-        function togglePhase(id) {
-            const phase = document.querySelector(`[data-id="${id}"]`);
+        // Toggle phase
+        function togglePhase(phaseId) {
+            const phase = document.querySelector(`[data-id="${phaseId}"]`);
             phase.classList.toggle('active');
         }
 
-        // Toggle edit mode
-        function toggleEditMode() {
-            isEditMode = !isEditMode;
-            const btn = document.querySelector('.btn-primary');
-            if (isEditMode) {
-                btn.textContent = '❌ Exit Edit Mode';
-                btn.style.background = '#ef4444';
-            } else {
-                btn.textContent = '✏️ Edit Content';
-                btn.style.background = '#10b981';
+        // Add photo
+        function addPhoto() {
+            const url = document.getElementById('photoUrl').value;
+            const caption = document.getElementById('photoCaption').value;
+            const phase = document.getElementById('phaseSelect').value;
+
+            if (!url) {
+                alert('Please paste an image URL');
+                return;
+            }
+
+            if (!caption) {
+                alert('Please add a caption');
+                return;
+            }
+
+            // Add to farm data
+            farmData[phase].images.push({ url, caption });
+
+            // Refresh display
+            renderTimeline();
+            displayPhotos();
+
+            // Clear inputs
+            document.getElementById('photoUrl').value = '';
+            document.getElementById('photoCaption').value = '';
+
+            alert('✅ Photo added! Refresh your page to see it. Then save this file and push to GitHub!');
+        }
+
+        // Display all photos
+        function displayPhotos() {
+            const photosList = document.getElementById('photosList');
+            let html = '';
+
+            Object.keys(farmData).forEach(phaseKey => {
+                const phase = farmData[phaseKey];
+                phase.images.forEach((img, idx) => {
+                    html += `
+                        <div class="photo-item">
+                            <div class="photo-item-info">
+                                <div class="photo-item-caption">
+                                    ${phase.title} - ${img.caption}
+                                </div>
+                                <div class="photo-item-url">${img.url}</div>
+                            </div>
+                            <button class="btn btn-danger" onclick="deletePhoto('${phaseKey}', ${idx})">🗑️ Delete</button>
+                        </div>
+                    `;
+                });
+            });
+
+            photosList.innerHTML = html || '<p style="color: var(--text-light); text-align: center;">No photos yet</p>';
+        }
+
+        // Delete photo
+        function deletePhoto(phaseKey, index) {
+            if (confirm('Delete this photo?')) {
+                farmData[phaseKey].images.splice(index, 1);
+                renderTimeline();
+                displayPhotos();
             }
         }
 
         // Initialize
         renderTimeline();
+        displayPhotos();
     </script>
 </body>
 </html>
